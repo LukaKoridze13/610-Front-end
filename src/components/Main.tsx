@@ -4,6 +4,7 @@ import { useState } from "react";
 import eye from "../assets/eye.svg";
 import eyehidden from "../assets/eyehidden.svg";
 import Boxes from "./Boxes";
+import background from "../assets/background.jpg";
 import { useNavigate } from "react-router-dom";
 export default function Main() {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ const Section = styled.section`
   padding: 48px;
   padding-bottom: 200px;
 
-  background: linear-gradient(180deg, #fff 0%, #a91e22 100%);
+  background: url(${background});
   background-size: auto 826px;
   background-repeat: no-repeat;
   background-position-x: left;
