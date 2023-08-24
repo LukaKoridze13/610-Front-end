@@ -33,6 +33,9 @@ export const Nav = styled.nav`
   @media (max-width: 1140px) {
     gap: 26px;
   }
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const NavItem = styled.span`
@@ -44,4 +47,21 @@ export const NavItem = styled.span`
   display: flex;
   align-items: center;
   gap: 8px;
+
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 0px;
+    width: 0%;
+    height: 2px;
+    background: #A91E22;
+    transition: all 0.3s;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
 `;

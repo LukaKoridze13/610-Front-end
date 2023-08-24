@@ -7,4 +7,7 @@ export default function Logo() {
 
 const Img = styled.img`
   width: 200px;
+  @media (max-width:480px) {
+    width: 120px;
+  }
 `;

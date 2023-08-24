@@ -21,30 +21,30 @@ export default function OnlineStores() {
         </ShowMore>
       </Wrapper>
       <StoresWrapper>
-        <Swiper spaceBetween={10} slidesPerView={4.5}>
+        <Swiper spaceBetween={window.innerWidth < 481 ? 1 : 5} slidesPerView={window.innerWidth < 481 ? 1.5 : 3.5}>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store1} alt="store" />
+            <Img src={store1} alt="store" />
           </SwiperSlide>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store2} alt="store" />
+            <Img src={store2} alt="store" />
           </SwiperSlide>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store3} alt="store" />
+            <Img src={store3} alt="store" />
           </SwiperSlide>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store4} alt="store" />
+            <Img src={store4} alt="store" />
           </SwiperSlide>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store1} alt="store" />
+            <Img src={store1} alt="store" />
           </SwiperSlide>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store2} alt="store" />
+            <Img src={store2} alt="store" />
           </SwiperSlide>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store3} alt="store" />
+            <Img src={store3} alt="store" />
           </SwiperSlide>
           <SwiperSlide style={{ cursor: "pointer" }}>
-            <img src={store4} alt="store" />
+            <Img src={store4} alt="store" />
           </SwiperSlide>
         </Swiper>
       </StoresWrapper>
@@ -56,12 +56,21 @@ const Section = styled.section`
   width: 100%;
   padding: 80px 72px 160px 72px;
   background: #f3f3f3;
+
+  @media (max-width: 480px) {
+    padding: 24px;
+  }
 `;
 
 const Title = styled.h3`
   color: #000;
   font-size: 36px;
   font-weight: 500;
+  @media (max-width: 480px) {
+    font-size: 24px;
+    white-space: nowrap;
+    width: 100%;
+  }
 `;
 
 const Text = styled.p`
@@ -70,6 +79,9 @@ const Text = styled.p`
   font-weight: 400;
   max-width: 700px;
   margin-top: 16px;
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -79,6 +91,11 @@ const Wrapper = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   align-items: flex-end;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 24px;
+  }
 `;
 
 const Div = styled.div``;
@@ -106,4 +123,12 @@ const StoresWrapper = styled.div`
   overflow: hidden;
 
   margin-top: 40px;
+`;
+
+const Img = styled.img`
+  width: 22vw;
+  max-width: 250px;
+  @media (max-width:480px) {
+    width: 50vw;
+  }
 `;

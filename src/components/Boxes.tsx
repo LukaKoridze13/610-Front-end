@@ -3,14 +3,14 @@ import payment from "../assets/payment.png";
 import calculator from "../assets/calculator.png";
 import delivery from "../assets/delivery.png";
 import repack from "../assets/repack.png";
-export default function Boxes() {
+export default function Boxes({ onClick }: { onClick: () => void }) {
   return (
     <Wrapper>
       <Box>
         <Icon src={payment} alt="Payment" />
         <Span>Payment</Span>
       </Box>
-      <Box>
+      <Box className="calc" onClick={onClick} style={{ cursor: "pointer" }}>
         <Icon src={calculator} alt="Calculator" />
         <Span>Calculator</Span>
       </Box>
@@ -30,10 +30,15 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  
   gap: 56px;
 
   width: 100%;
   margin-top: 88px;
+  @media (max-width: 480px) {
+    gap: 24px;
+  }
 `;
 
 const Box = styled.div`
@@ -49,7 +54,11 @@ const Box = styled.div`
   gap: 16px;
 
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
-
+  @media (max-width: 480px) {
+    width: 70%;
+    aspect-ratio: 1;
+    padding: 20px;
+  }
 `;
 
 const Icon = styled.img`

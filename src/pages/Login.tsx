@@ -15,8 +15,8 @@ export default function Login() {
 
   return (
     <Wrapper>
-      <BackToHome left={-200} />
       <Form style={{ background: "#F1F1F1" }}>
+        <BackToHome left={window.innerWidth > 480 ? -200 : 30} top={window.innerWidth > 480 ? -50 : -100} />
         <FormTitle>Log in</FormTitle>
         <Group>
           <Label htmlFor="email">Email</Label>
@@ -51,4 +51,8 @@ const Wrapper = styled.div`
   align-items: center;
 
   background-color: white;
+
+  @media (max-width: 480px) {
+    padding: 24px;
+  }
 `;

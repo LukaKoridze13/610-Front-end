@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import back from "../assets/back.svg";
 import { useNavigate } from "react-router-dom";
-export default function BackToHome({ left }: { left: number }) {
+export default function BackToHome({ left, top }: { left: number; top?: number }) {
   const navigate = useNavigate();
   return (
     <Button
       $left={left}
+      $top={top}
       onClick={() => {
         navigate("/");
       }}
@@ -15,7 +16,7 @@ export default function BackToHome({ left }: { left: number }) {
   );
 }
 
-const Button = styled.button<{ $left: number }>`
+const Button = styled.button<{ $left: number; $top?: number }>`
   color: #060707;
   font-size: 20px;
   font-weight: 400;
@@ -25,6 +26,7 @@ const Button = styled.button<{ $left: number }>`
   gap: 18px;
 
   position: absolute;
-  top: -60px;
+  z-index: 10;
+  top: ${(props) => props.$top + "px" || -60};
   left: ${(props) => props.$left}px;
 `;

@@ -26,9 +26,8 @@ export default function Signup() {
 
   return (
     <Wrapper>
-      <Form style={{ width: "664px", background: "#F1F1F1" }}>
-      <BackToHome left={-200}/>
-
+      <Form style={{ width: window.innerWidth > 480 ? "664px" : "100%", background: "#F1F1F1" }}>
+      <BackToHome left={window.innerWidth > 480 ? -200 : 40} top={window.innerWidth > 480 ? 0 : -50} />
         <FormTitle>Registration</FormTitle>
         <Whole>
           <Half>
@@ -96,12 +95,19 @@ const Wrapper = styled.div`
   min-height: 100dvh;
 
   padding: 40px;
-  padding-top:200px;
+  padding-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: white;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 `;
 
 const Whole = styled.div`
@@ -127,6 +133,9 @@ const Agree = styled.span`
   font-size: 20px;
   font-weight: 400;
   cursor: pointer;
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 const Span = styled.a`
@@ -134,6 +143,9 @@ const Span = styled.a`
   font-size: 20px;
   font-weight: 500;
   text-decoration-line: underline;
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 const Checkbox = styled.img`

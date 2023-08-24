@@ -5,6 +5,11 @@ export const Form = styled.form`
   background: #fff;
   width: 430px;
   position: relative;
+  @media (max-width: 480px) {
+    padding: 24px;
+    width: 95% !important;
+    margin-top: 50px;
+  }
 `;
 
 export const FormTitle = styled.p`
@@ -13,6 +18,10 @@ export const FormTitle = styled.p`
   font-weight: 700;
   margin-bottom: 64px;
   text-align: center;
+  @media (max-width: 480px) {
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
 `;
 
 export const Label = styled.label`
@@ -22,6 +31,9 @@ export const Label = styled.label`
   padding-left: 16px;
   display: block;
   cursor: pointer;
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 export const Input = styled.input`
@@ -66,6 +78,9 @@ export const ForgotPassword = styled.span`
   font-weight: 400;
   text-decoration-line: underline;
   cursor: pointer;
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 export const Submit = styled.button`
@@ -77,6 +92,13 @@ export const Submit = styled.button`
   font-size: 24px;
   font-weight: 500;
   margin-top: 64px;
+  @media (max-width: 480px) {
+    font-size: 18px;
+    height: 36px;
+    width: 70%;
+    margin: 36px auto 0 auto;
+    display: block;
+  }
 `;
 
 export const Registration = styled.button`
@@ -88,4 +110,8 @@ export const Registration = styled.button`
 
   display: block;
   margin-inline: auto;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;

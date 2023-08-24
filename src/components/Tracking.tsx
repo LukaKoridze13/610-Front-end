@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import pack from "../assets/handandbox.png";
+import pack from "../assets/package.png";
 import scan from "../assets/scan.svg";
 
 export default function Tracking() {
@@ -30,6 +30,10 @@ const Section = styled.section`
   justify-content: center;
   gap: 170px;
   flex-wrap: wrap;
+  @media (max-width: 480px) {
+    padding: 30px;
+    gap: 30px;
+  }
 `;
 
 const Img = styled.img`
@@ -41,18 +45,33 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+  
+  @media (max-width: 480px) {
+    width: 100%;
+
+  }
 `;
 
-const WrapperTwo = styled.section`
+const WrapperTwo = styled.div`
   display: flex;
   align-items: center;
   gap: 40px;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+  @media (max-width: 480px) {
+    flex-direction: row;
+    width: 100%;
+  }
 `;
 const Title = styled.h3`
   color: #000;
   text-align: center;
   font-size: 32px;
   font-weight: 400;
+  @media (max-width:480px) {
+    text-align: left;
+  }
 `;
 
 const Text = styled.p`
@@ -60,6 +79,9 @@ const Text = styled.p`
   text-align: center;
   font-size: 20px;
   font-weight: 400;
+  @media (max-width:480px) {
+    text-align: left;
+  }
 `;
 
 const Input = styled.input`
@@ -77,6 +99,9 @@ const Input = styled.input`
     font-size: 14px;
     font-weight: 400;
   }
+  @media (max-width: 480px) {
+    width: 140%;
+  }
 `;
 const Submit = styled.button`
   width: 236px;
@@ -86,4 +111,8 @@ const Submit = styled.button`
   color: #fff;
   font-size: 24px;
   font-weight: 500;
+  @media (max-width: 480px) {
+    font-size: 14px;
+    height: 36px;
+  }
 `;
